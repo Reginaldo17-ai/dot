@@ -29,7 +29,7 @@ module.exports=app=>
     app.get(`/file`,(req,res)=>
     {
 
-        let path = '../api/images/' + req.query.path;
+        let path = 'routes/images/' + req.query.path;
 
         if (fs.existsSync(path)) {
             fs.readFile(path, (err, data) => {
