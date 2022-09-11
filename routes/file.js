@@ -11,7 +11,7 @@ module.exports=app=>
         let form = new formidable.IncomingForm(
             {
 
-                uploadDir: 'dot/images',
+                uploadDir: './images',
                 keepExtensions: true,
                 hash: ''
 
@@ -29,7 +29,7 @@ module.exports=app=>
     app.get(`/file`,(req,res)=>
     {
 
-        let path = 'dot/images/' + req.query.path;
+        let path = './images/' + req.query.path;
 
         if (fs.existsSync(path)) {
             fs.readFile(path, (err, data) => {
