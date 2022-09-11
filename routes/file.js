@@ -11,7 +11,7 @@ module.exports=app=>
         let form = new formidable.IncomingForm(
             {
 
-                uploadDir: '../api/images',
+                uploadDir: './routes/images',
                 keepExtensions: true,
                 hash: ''
 
