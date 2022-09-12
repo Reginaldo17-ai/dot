@@ -46,7 +46,7 @@ process.on('SIGTERM', () => {
     })
 })
 
-var io = require('socket.io')(app,{cors:{origin:"*"}});
+var io = require('socket.io')(server,{cors:{origin:"*"}});
 
 io.on('connection',(socket)=>
 {
