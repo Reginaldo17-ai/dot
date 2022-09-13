@@ -46,7 +46,7 @@ module.exports=app=>
     app.get(`/conversation/message_one/:user_id/:friend_id`,(req,res)=>
     {
          const {user_id,friend_id}=req.params;
-         console.log(`3-id_user: ${user_id} - 3-${friend_id}`)
+         console.log(`3-id_user: ${user_id} - 3-friend:${friend_id}`)
 
 
         db_conection.query(`select * from "message" where user_id='${user_id}' and friend_id='${friend_id}' order by id desc limit 1`, (err, rows, fields) =>
