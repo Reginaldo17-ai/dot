@@ -20,10 +20,10 @@ module.exports=app=>
  
     app.post(`/user_last_message`,(req,res)=>
     {
-         const {id,id_user,friend_id,seem}=req.body;
+         const {id_user,friend_id,seem}=req.body;
          console.log(`2-last-id_user:${id_user} 2-last-friend_id:${friend_id} 2-last-seem${seem}`)
        
-         db_conection.query(`INSERT into "user_last_message" (id,user_id,friend_id,date_message,seem) values ('${id}','${id_user}','${friend_id}',CURRENT_TIMESTAMP,'${seem}')`, (err, rows, fields) =>
+         db_conection.query(`INSERT into "user_last_message" (id,user_id,friend_id,date_message,seem) values (default,'${id_user}','${friend_id}',CURRENT_TIMESTAMP,'${seem}')`, (err, rows, fields) =>
     {   
         if(err)
         console.log(err);
