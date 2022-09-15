@@ -61,10 +61,10 @@ module.exports=app=>
     
     app.post(`/conversation`,(req,res)=>
     {
-         const {id,user_id,friend_id,message,who_send,type_of_message}=req.body;
-           console.log(`4-id:${id} 4-who:${who_send} 4-id_user: ${user_id} - 4-${friend_id}`)
+         const {user_id,friend_id,message,who_send,type_of_message}=req.body;
+       
 
-        db_conection.query(`insert into "message" (id,user_id,friend_id,message,who_send,type_of_message) values('${id}','${user_id}','${friend_id}','${message}','${who_send}','${type_of_message}') ;`, (err, rows, fields) =>
+        db_conection.query(`insert into "message" (id,user_id,friend_id,message,who_send,type_of_message) values(default,'${user_id}','${friend_id}','${message}','${who_send}','${type_of_message}') ;`, (err, rows, fields) =>
     {
         if(err)
         console.log(err);
